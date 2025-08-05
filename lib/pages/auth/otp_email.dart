@@ -71,7 +71,7 @@ class _OtpPageState extends State<OtpPage> {
                     InkWell (
                       onTap: () {
                             Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => Password()));
+                            MaterialPageRoute(builder: (_) => PinCodeScreen()));
                       },
                       child: Container(
                           height: 56,
