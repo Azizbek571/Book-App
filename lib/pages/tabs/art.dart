@@ -5,7 +5,7 @@ class ArtBooksTab extends StatelessWidget {
   final List<Map<String, dynamic>> books = [
     {
       "title": "Displacement",
-      "author": "Claude Monet",
+      "author": "Kiku Hughes",
       "image": "assets/images/muqaddima.png",
       "rating": 4,
     },
@@ -19,7 +19,7 @@ class ArtBooksTab extends StatelessWidget {
       "title": "Surrealism Explained",
       "author": "Salvador Dalí",
       "image": "assets/images/hukmdor.png",
-      "rating": 4,
+      "rating": 2,
     },
   ];
   @override
@@ -90,7 +90,7 @@ class ArtBooksTab extends StatelessWidget {
                               Text(
                                 book["title"],
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 14),
+                                    fontWeight: FontWeight.bold, fontSize: 16),
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                               ),
@@ -98,19 +98,34 @@ class ArtBooksTab extends StatelessWidget {
                               Text(
                                 book["author"],
                                 style: TextStyle(
-                                    color: Colors.grey[600], fontSize: 12),
+                                    color: Color(0xff4838D1), fontSize: 13, fontWeight: FontWeight.w400),
                               ),
                               SizedBox(height: 8),
-                              Row(
-                                  children: List.generate(5, (star) {
-                                return Icon(
-                                  Icons.star,
-                                  size: 16,
-                                  color: star < book["rating"]
-                                      ? Colors.amber
-                                      : Colors.grey[300],
-                                );
-                              })),
+                              Row( 
+                                children: [ 
+                                  Icon(Icons.menu_book_outlined, 
+                                  color: Color(0xff4838D1),
+                                  size:18 ,
+                                  ),
+                                 Image.asset(AppImages.vector,
+                                 width: 30,height: 20,
+                                 ),
+                                 Image.asset(AppImages.headphones,
+                                 
+                                 width: 30,height: 20,
+                                 ),
+                                ],
+                              )
+                              // Row(
+                              //     children: List.generate(5, (star) {
+                              //   return Icon(
+                              //     Icons.star,
+                              //     size: 16,
+                              //     color: star < book["rating"]
+                              //         ? Colors.amber
+                              //         : Colors.grey[300],
+                              //   );
+                              // })),
                             ],
                           ),
                         )

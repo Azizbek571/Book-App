@@ -5,5 +5,8 @@ class AppImages{
   static String muqaddima = 'assets/images/muqaddima.png';
   static String nsoftlogo = 'assets/images/nsoftlogo.png';
   static String setting = 'assets/images/setting.png';
+  static String book = 'assets/images/book.png';
+  static String vector = 'assets/images/vector.png';
+  static String headphones = 'assets/images/headphones.png';
   
 }
