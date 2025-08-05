@@ -36,21 +36,21 @@ class ArtBooksTab extends StatelessWidget {
               Row(
                 children: [
                   Text("Batafsil",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xff8599FF))),
-                        Icon(Icons.arrow_forward_ios_outlined, 
-                        size: 12,
-                        color: Color(0xff8599FF),
-                        )
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff8599FF))),
+                  Icon(
+                    Icons.arrow_forward_ios_outlined,
+                    size: 12,
+                    color: Color(0xff8599FF),
+                  )
                 ],
               ),
             ],
           ),
           SizedBox(
-            height: 370,
-            
+            height: 390,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: books.length,
@@ -67,21 +67,17 @@ class ArtBooksTab extends StatelessWidget {
                               color: Colors.black12,
                               blurRadius: 6,
                               offset: Offset(2, 2))
-                        ]
-                        
-                        ),
+                        ]),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ClipRRect(
-                          
-                          borderRadius: BorderRadiusGeometry.circular(15),
+                          borderRadius: BorderRadius.circular(15),
                           child: Image.asset(book["image"],
                               height: 234,
                               width: double.infinity,
-                              fit: BoxFit.contain),
+                              fit: BoxFit.fill),
                         ),
-                       
                         Padding(
                           padding: EdgeInsets.all(8),
                           child: Column(
@@ -98,22 +94,26 @@ class ArtBooksTab extends StatelessWidget {
                               Text(
                                 book["author"],
                                 style: TextStyle(
-                                    color: Color(0xff4838D1), fontSize: 13, fontWeight: FontWeight.w400),
+                                    color: Color(0xff4838D1),
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w400),
                               ),
                               SizedBox(height: 8),
-                              Row( 
-                                children: [ 
-                                  Icon(Icons.menu_book_outlined, 
-                                  color: Color(0xff4838D1),
-                                  size:18 ,
+                              Row(
+                                children: [
+                                  Icon(Icons.menu_book_outlined,
+                                      color: Color(0xff4838D1), size: 14),
+                                  Image.asset(AppImages.vector,
+                                      width: 14, height: 14),
+                                  Image.asset(AppImages.headphones,
+                                      width: 14, height: 14),
+                                  SizedBox(width: 15),
+                                  Icon(
+                                    Icons.star,
+                                    color: Color(0xffF77A55),
+                                    size: 12,
                                   ),
-                                 Image.asset(AppImages.vector,
-                                 width: 30,height: 20,
-                                 ),
-                                 Image.asset(AppImages.headphones,
-                                 
-                                 width: 30,height: 20,
-                                 ),
+                                  Text("4.0")
                                 ],
                               )
                               // Row(

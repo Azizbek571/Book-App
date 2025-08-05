@@ -1,4 +1,4 @@
-import 'package:book_app/pages/home_page.dart';
+import 'package:book_app/pages/home/home_page.dart';
 import 'package:book_app/pages/library_page.dart';
 import 'package:book_app/pages/market_page.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +23,7 @@ class _BottomNavPageState extends State<BottomNavPage> {
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        selectedItemColor: Colors.green, // Active color
+        selectedItemColor: Colors.blue, // Active color
         unselectedItemColor: Colors.grey, // Inactive color
         onTap: (index) {
           setState(() {
@@ -36,12 +36,12 @@ class _BottomNavPageState extends State<BottomNavPage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
+            icon: Icon(Icons.shopping_bag_outlined),
             label: 'Market',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.menu_book),
-            label: 'Library',
+            label: 'Kutubxona',
           ),
         ],
       ),

@@ -1,7 +1,7 @@
 import 'package:book_app/config/images.dart';
 
 import 'package:book_app/pages/auth/password.dart';
-import 'package:book_app/pages/home_page.dart';
+import 'package:book_app/pages/home/home_page.dart';
 
 import 'package:flutter/material.dart';
 
