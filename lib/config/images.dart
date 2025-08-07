@@ -8,5 +8,9 @@ class AppImages{
   static String book = 'assets/images/book.png';
   static String vector = 'assets/images/vector.png';
   static String headphones = 'assets/images/headphones.png';
+  static String activity = 'assets/images/activity.png';
+  static String Camera = 'assets/images/Camera.png';
+  static String play = 'assets/images/play.png';
+  static String profile = 'assets/images/profile.png';
   
 }

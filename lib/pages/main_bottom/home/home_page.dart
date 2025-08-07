@@ -1,5 +1,6 @@
 import 'package:book_app/config/images.dart';
-import 'package:book_app/pages/home/newly_added_books.dart';
+import 'package:book_app/pages/main_bottom/home/just_homelist.dart';
+import 'package:book_app/pages/main_bottom/home/newly_added_books.dart';
 import 'package:book_app/pages/tabs/art.dart';
 import 'package:book_app/pages/tabs/business.dart';
 import 'package:book_app/pages/tabs/comedytab.dart';
@@ -23,6 +24,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -30,7 +32,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             children: [
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 30, horizontal: 15),
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
                 child: Column(
                   children: [
                     Row(
@@ -40,12 +42,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           children: [
                             Image.asset(
                               AppImages.nsoft,
-                              height: 70,
-                              width: 70,
+                              height: 50,
+                              width: 50,
                             ),
                             Image.asset(
                               AppImages.nsoftlogo,
-                              height: 45,
+                              height: 59,
                               width: 95,
                             ),
                           ],
@@ -57,7 +59,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ),
                       ],
                     ),
-                    SizedBox(height: 25),
+                    SizedBox(height: 15),
                     TextField(
                       decoration: InputDecoration(
                           hintText: "Kitoblar yoki mualliflarni qidirish...",
@@ -73,7 +75,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               Align(
                 alignment: Alignment.centerLeft,
                 child: TabBar(
-                  dividerColor: Colors.transparent,
+                    indicatorPadding: EdgeInsets.symmetric(vertical: 6),
+                    dividerColor: Colors.transparent,
                     controller: tabController,
                     isScrollable: true,
                     labelColor: Colors.white,
@@ -103,14 +106,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     ]),
               ),
               SizedBox(
-                  height: 460,
+                  height: screenHeight * 0.54,
                   child: TabBarView(controller: tabController, children: [
                     ArtBooksTab(),
                     BusinessTab(),
                     ComedyTab(),
                     DramaTab(),
                   ])),
-              NewlyAddedBooks()
+              NewlyAddedBooks(),
+              JustHomelist()
             ],
           ),
         ),
@@ -119,56 +123,4 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 }
 
-// child: Padding(
-//   padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 7),
-//   child: Row(
-//     children: [
-//       ClipRRect(
-//         borderRadius: BorderRadius.circular(12),
-//         child: Image.asset(
-//           book["image"],
-//           width: 73,
-//           height: 110,
-//           fit: BoxFit.cover,
-//         ),
-//       ),
-//       const SizedBox(width: 12),
-//       Expanded(
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             Text(
-//               book["title"],
-//               style: const TextStyle(
-//                 fontSize: 16,
-//                 fontWeight: FontWeight.w600,
-//               ),
-//               maxLines: 2,
-//               overflow: TextOverflow.ellipsis,
-//             ),
-//             const SizedBox(height: 4),
-//             Text(
-//               book["author"],
-//               style: const TextStyle(
-//                 fontSize: 14,
-//                 color: Color(0xff4838D1),
-//               ),
-//             ),
-//             const SizedBox(height: 8),
-//             Row(
-//               children: [
-//                 Icon(Icons.menu_book_outlined,
-//                     color: Color(0xff4838D1), size: 18),
-//                 const SizedBox(width: 8),
-//                 Image.asset(AppImages.vector, width: 30, height: 20),
-//                 const SizedBox(width: 8),
-//                 Image.asset(AppImages.headphones, width: 30, height: 20),
-//               ],
-//             ),
-//           ],
-//         ),
-//       )
-//     ],
-//   ),
-// ),
+

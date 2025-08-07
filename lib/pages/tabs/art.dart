@@ -21,11 +21,49 @@ class ArtBooksTab extends StatelessWidget {
       "image": "assets/images/hukmdor.png",
       "rating": 2,
     },
+    {
+      "title": "Displacement",
+      "author": "Kiku Hughes",
+      "image": "assets/images/muqaddima.png",
+      "rating": 4,
+    },
+    {
+      "title": "Renaissance Art",
+      "author": "Leonardo da Vinci",
+      "image": "assets/images/hukmdor.png",
+      "rating": 5,
+    },
+    {
+      "title": "Surrealism Explained",
+      "author": "Salvador Dalí",
+      "image": "assets/images/hukmdor.png",
+      "rating": 2,
+    },
+    {
+      "title": "Displacement",
+      "author": "Kiku Hughes",
+      "image": "assets/images/muqaddima.png",
+      "rating": 4,
+    },
+    {
+      "title": "Renaissance Art",
+      "author": "Leonardo da Vinci",
+      "image": "assets/images/hukmdor.png",
+      "rating": 5,
+    },
+    {
+      "title": "Surrealism Explained",
+      "author": "Salvador Dalí",
+      "image": "assets/images/hukmdor.png",
+      "rating": 2,
+    },
   ];
+
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
+      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
       child: Column(
         children: [
           Row(
@@ -50,7 +88,7 @@ class ArtBooksTab extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 390,
+            height: screenHeight * 0.47,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: books.length,
@@ -99,23 +137,53 @@ class ArtBooksTab extends StatelessWidget {
                                     fontWeight: FontWeight.w400),
                               ),
                               SizedBox(height: 8),
+
+
                               Row(
                                 children: [
-                                  Icon(Icons.menu_book_outlined,
-                                      color: Color(0xff4838D1), size: 14),
-                                  Image.asset(AppImages.vector,
-                                      width: 14, height: 14),
-                                  Image.asset(AppImages.headphones,
-                                      width: 14, height: 14),
-                                  SizedBox(width: 15),
-                                  Icon(
-                                    Icons.star,
-                                    color: Color(0xffF77A55),
-                                    size: 12,
+                                  Container(
+                                    padding: EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(4),
+                                        border: Border.all(
+                                            color:
+                                                Colors.grey.withOpacity(0.1))),
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.menu_book_outlined,
+                                            color: Color(0xff4838D1), size: 14),
+                                        Image.asset(AppImages.vector,
+                                            width: 14, height: 18),
+                                        Image.asset(AppImages.headphones,
+                                            width: 14, height: 18),
+                                        SizedBox(width: 15),
+                                      ],
+                                    ),
+
+
                                   ),
-                                  Text("4.0")
+                                  SizedBox(width: 7),
+                                  Container(
+                                    padding: EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(4),
+                                        border: Border.all(
+                                            color:
+                                                Colors.grey.withOpacity(0.1))),
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xffF77A55),
+                                          size: 18,
+                                        ),
+                                        Text(
+                                            "${book['rating'].toStringAsFixed(1)}")
+                                      ],
+                                    ),
+                                  ),
                                 ],
-                              )
+                              ),
                               // Row(
                               //     children: List.generate(5, (star) {
                               //   return Icon(

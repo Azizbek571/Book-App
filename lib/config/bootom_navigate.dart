@@ -1,6 +1,6 @@
-import 'package:book_app/pages/home/home_page.dart';
+import 'package:book_app/pages/main_bottom/home/home_page.dart';
+import 'package:book_app/pages/main_bottom/market/market_main.dart';
 import 'package:book_app/pages/library_page.dart';
-import 'package:book_app/pages/market_page.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavPage extends StatefulWidget {
@@ -23,8 +23,8 @@ class _BottomNavPageState extends State<BottomNavPage> {
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        selectedItemColor: Colors.blue, // Active color
-        unselectedItemColor: Colors.grey, // Inactive color
+        selectedItemColor: Colors.blue, 
+        unselectedItemColor: Colors.grey, 
         onTap: (index) {
           setState(() {
             _currentIndex = index;

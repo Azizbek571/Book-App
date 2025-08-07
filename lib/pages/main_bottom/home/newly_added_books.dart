@@ -24,11 +24,55 @@ class NewlyAddedBooks extends StatelessWidget {
       "listeners": "1.000+ Tinglovchilar",
       "rating": 2,
     },
+    {
+      "title": "Displacement",
+      "author": "Kiku Hughes",
+      "image": "assets/images/muqaddima.png",
+      "listeners": "2.000+ Tinglovchilar",
+      "rating": 4,
+    },
+    {
+      "title": "Renaissance Art",
+      "author": "Leonardo da Vinci",
+      "image": "assets/images/hukmdor.png",
+      "listeners": "5.000+ Tinglovchilar",
+      "rating": 5,
+    },
+    {
+      "title": "Surrealism Explained",
+      "author": "Salvador Dalí",
+      "image": "assets/images/hukmdor.png",
+      "listeners": "1.000+ Tinglovchilar",
+      "rating": 2,
+    },
+    {
+      "title": "Displacement",
+      "author": "Kiku Hughes",
+      "image": "assets/images/muqaddima.png",
+      "listeners": "2.000+ Tinglovchilar",
+      "rating": 4,
+    },
+    {
+      "title": "Renaissance Art",
+      "author": "Leonardo da Vinci",
+      "image": "assets/images/hukmdor.png",
+      "listeners": "5.000+ Tinglovchilar",
+      "rating": 5,
+    },
+    {
+      "title": "Surrealism Explained",
+      "author": "Salvador Dalí",
+      "image": "assets/images/hukmdor.png",
+      "listeners": "1.000+ Tinglovchilar",
+      "rating": 2,
+    },
   ];
   NewlyAddedBooks({super.key});
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 18),
       child: Column(
@@ -55,14 +99,14 @@ class NewlyAddedBooks extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 138,
+            height: screenHeight * 0.2,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: books.length,
               itemBuilder: (context, index) {
                 final book = books[index];
                 return Container(
-                  width: 270,
+                  width: screenWidth * 0.7,
 
                   margin: EdgeInsets.only(right: 20, top: 12),
                   decoration: BoxDecoration(
@@ -117,16 +161,43 @@ class NewlyAddedBooks extends StatelessWidget {
                               Row(
                                 children: List.generate(5, (star) {
                                   return Icon(Icons.star,
-                                              size: 16,
-                                          color: star < book["rating"]
-                                              ? Colors.orange
-                                              : Colors.grey[300],
-                                  
-                                  );
-                                })
-                         
-                                ,
-                              )
+                                      size: 18,
+                                      color: star < book["rating"]
+                                          ? Colors.orange
+                                          : Colors.grey[300]);
+                                }),
+                              ),
+                              SizedBox(height: 15),
+                              Row(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(4),
+                                        border: Border.all(
+                                            color:
+                                                Colors.grey.withOpacity(0.1))),
+                                    child: Image.asset(AppImages.headphones,
+                                        width: 18, height: 18),
+                                  ),
+                                  SizedBox(width: 15),
+                                  Container(
+                                    padding: EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(4),
+                                        border: Border.all(
+                                            color: Colors.grey.withOpacity(0.1))),
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.star,
+                                            color: Colors.orange, size: 18),
+                                        Text(
+                                            "${book['rating'].toStringAsFixed(1)}")
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ],
                           ))
                         ],

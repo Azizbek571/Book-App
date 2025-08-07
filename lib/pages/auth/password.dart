@@ -201,7 +201,7 @@
 import 'package:book_app/config/animated_snackbar.dart';
 import 'package:book_app/config/images.dart';
 import 'package:book_app/config/snackbar.dart';
-import 'package:book_app/pages/home/home_page.dart';
+import 'package:book_app/pages/main_bottom/home/home_page.dart';
 import 'package:book_app/pages/main_page.dart';
 import 'package:flutter/material.dart';
 

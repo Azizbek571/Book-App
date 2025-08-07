@@ -24,6 +24,8 @@ class DramaTab extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return
     
      Padding(
@@ -51,7 +53,8 @@ class DramaTab extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 370,
+                       height: screenHeight * 0.45,
+
             
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
