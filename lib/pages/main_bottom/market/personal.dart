@@ -11,15 +11,12 @@ class PersonalPage extends StatelessWidget {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor, 
         title: Text("Shaxsiy"),
         elevation: 3,
-
   shadowColor: Colors.black.withOpacity(0.3),
         centerTitle: true,
         leading: Padding(
           padding: const EdgeInsets.only(left: 25),
           child: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              onPressed: () {Navigator.pop(context);},
               icon: Icon(Icons.arrow_back_ios)),
         ),
       ),

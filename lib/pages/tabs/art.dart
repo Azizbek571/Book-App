@@ -1,3 +1,4 @@
+import 'package:book_app/config/bookitem.dart';
 import 'package:book_app/config/images.dart';
 import 'package:flutter/material.dart';
 
@@ -94,111 +95,104 @@ class ArtBooksTab extends StatelessWidget {
               itemCount: books.length,
               itemBuilder: (context, index) {
                 final book = books[index];
-                return Container(
-                    width: 160,
-                    margin: EdgeInsets.only(right: 20, top: 12),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black12,
-                              blurRadius: 6,
-                              offset: Offset(2, 2))
-                        ]),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Image.asset(book["image"],
-                              height: 234,
-                              width: double.infinity,
-                              fit: BoxFit.fill),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                book["title"],
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 16),
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              SizedBox(height: 4),
-                              Text(
-                                book["author"],
-                                style: TextStyle(
-                                    color: Color(0xff4838D1),
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                              SizedBox(height: 8),
+                return 
+                
+                BookItem(book: books[index], isHorizontal: true);
 
+                // Container(
+                //     width: 160,
+                //     margin: EdgeInsets.only(right: 20, top: 12),
+                //     decoration: BoxDecoration(
+                //         color: Colors.white,
+                //         borderRadius: BorderRadius.circular(15),
+                //         boxShadow: [
+                //           BoxShadow(
+                //               color: Colors.black12,
+                //               blurRadius: 6,
+                //               offset: Offset(2, 2))
+                //         ]),
+                //     child: Column(
+                //       crossAxisAlignment: CrossAxisAlignment.start,
+                //       children: [
+                //         ClipRRect(
+                //           borderRadius: BorderRadius.circular(15),
+                //           child: Image.asset(book["image"],
+                //               height: 234,
+                //               width: double.infinity,
+                //               fit: BoxFit.fill),
+                //         ),
+                //         Padding(
+                //           padding: EdgeInsets.all(8),
+                //           child: Column(
+                //             crossAxisAlignment: CrossAxisAlignment.start,
+                //             children: [
+                //               Text(
+                //                 book["title"],
+                //                 style: TextStyle(
+                //                     fontWeight: FontWeight.bold, fontSize: 16),
+                //                 maxLines: 2,
+                //                 overflow: TextOverflow.ellipsis,
+                //               ),
+                //               SizedBox(height: 4),
+                //               Text(
+                //                 book["author"],
+                //                 style: TextStyle(
+                //                     color: Color(0xff4838D1),
+                //                     fontSize: 13,
+                //                     fontWeight: FontWeight.w400),
+                //               ),
+                //               SizedBox(height: 8),
 
-                              Row(
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.all(5),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(4),
-                                        border: Border.all(
-                                            color:
-                                                Colors.grey.withOpacity(0.1))),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.menu_book_outlined,
-                                            color: Color(0xff4838D1), size: 14),
-                                        Image.asset(AppImages.vector,
-                                            width: 14, height: 18),
-                                        Image.asset(AppImages.headphones,
-                                            width: 14, height: 18),
-                                        SizedBox(width: 15),
-                                      ],
-                                    ),
+                //               Row(
+                //                 children: [
+                //                   Container(
+                //                     padding: EdgeInsets.all(5),
+                //                     decoration: BoxDecoration(
+                //                         borderRadius: BorderRadius.circular(4),
+                //                         border: Border.all(
+                //                             color:
+                //                                 Colors.grey.withOpacity(0.1))),
+                //                     child: Row(
+                //                       children: [
+                //                         Icon(Icons.menu_book_outlined,
+                //                             color: Color(0xff4838D1), size: 14),
+                //                         Image.asset(AppImages.vector,
+                //                             width: 14, height: 18),
+                //                         Image.asset(AppImages.headphones,
+                //                             width: 14, height: 18),
+                //                         SizedBox(width: 15),
+                //                       ],
+                //                     ),
 
+                //                   ),
+                //                   SizedBox(width: 7),
+                //                   Container(
+                //                     padding: EdgeInsets.all(5),
+                //                     decoration: BoxDecoration(
+                //                         borderRadius: BorderRadius.circular(4),
+                //                         border: Border.all(
+                //                             color:
+                //                                 Colors.grey.withOpacity(0.1))),
+                //                     child: Row(
+                //                       children: [
+                //                         Icon(
+                //                           Icons.star,
+                //                           color: Color(0xffF77A55),
+                //                           size: 18,
+                //                         ),
+                //                         Text(
+                //                             "${book['rating'].toStringAsFixed(1)}")
+                //                       ],
+                //                     ),
+                //                   ),
+                //                 ],
+                //               ),
 
-                                  ),
-                                  SizedBox(width: 7),
-                                  Container(
-                                    padding: EdgeInsets.all(5),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(4),
-                                        border: Border.all(
-                                            color:
-                                                Colors.grey.withOpacity(0.1))),
-                                    child: Row(
-                                      children: [
-                                        Icon(
-                                          Icons.star,
-                                          color: Color(0xffF77A55),
-                                          size: 18,
-                                        ),
-                                        Text(
-                                            "${book['rating'].toStringAsFixed(1)}")
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              // Row(
-                              //     children: List.generate(5, (star) {
-                              //   return Icon(
-                              //     Icons.star,
-                              //     size: 16,
-                              //     color: star < book["rating"]
-                              //         ? Colors.amber
-                              //         : Colors.grey[300],
-                              //   );
-                              // })),
-                            ],
-                          ),
-                        )
-                      ],
-                    ));
+                //             ],
+                //           ),
+                //         )
+                //       ],
+                //     ));
               },
             ),
           ),

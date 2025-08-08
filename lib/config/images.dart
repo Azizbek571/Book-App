@@ -12,5 +12,6 @@ class AppImages{
   static String Camera = 'assets/images/Camera.png';
   static String play = 'assets/images/play.png';
   static String profile = 'assets/images/profile.png';
+  static String vector2 = 'assets/images/vector2.png';
   
 }

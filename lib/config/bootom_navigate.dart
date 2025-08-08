@@ -1,6 +1,7 @@
 import 'package:book_app/pages/main_bottom/home/home_page.dart';
+import 'package:book_app/pages/main_bottom/library/libray_page.dart';
 import 'package:book_app/pages/main_bottom/market/market_main.dart';
-import 'package:book_app/pages/library_page.dart';
+
 import 'package:flutter/material.dart';
 
 class BottomNavPage extends StatefulWidget {
@@ -14,7 +15,7 @@ class _BottomNavPageState extends State<BottomNavPage> {
   final List<Widget> _pages = [
     HomePage(),
     MarketPage(),
-    LibraryPage(),
+    LibaryPage(),
   ];
 
   @override

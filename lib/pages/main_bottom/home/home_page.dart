@@ -1,4 +1,5 @@
 import 'package:book_app/config/images.dart';
+import 'package:book_app/config/section_header.dart';
 import 'package:book_app/pages/main_bottom/home/just_homelist.dart';
 import 'package:book_app/pages/main_bottom/home/newly_added_books.dart';
 import 'package:book_app/pages/tabs/art.dart';
@@ -114,6 +115,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     DramaTab(),
                   ])),
               NewlyAddedBooks(),
+              SectionHeader(
+  title: "Eng so'ngi qidiruv",
+  onTap: () {
+   
+  },
+),
+
               JustHomelist()
             ],
           ),
