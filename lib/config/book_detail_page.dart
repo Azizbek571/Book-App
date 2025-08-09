@@ -1,4 +1,6 @@
 import 'package:book_app/config/images.dart';
+import 'package:book_app/pages/comment_page.dart';
+import 'package:book_app/pages/main_bottom/home/newly_added_books.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailPage extends StatefulWidget {
@@ -263,7 +265,24 @@ class _BookDetailPageState extends State<BookDetailPage> {
                 ),
 
 
-                
+                CommentPage(),
+
+                      GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 16, horizontal: 80),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Color(0xff4838D1))),
+                      child: Text(
+                        "Kitob haqida izoh qoldirish",
+                        style: TextStyle(color: Color(0xff4838D1)),
+                      )),
+                ),
+
+              NewlyAddedBooks(),
+
               ],
             ),
           ),
