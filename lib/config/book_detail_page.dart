@@ -1,17 +1,23 @@
 import 'package:book_app/config/images.dart';
 import 'package:flutter/material.dart';
 
-class BookDetailPage extends StatelessWidget {
+class BookDetailPage extends StatefulWidget {
   final Map<String, dynamic> book;
 
   const BookDetailPage({super.key, required this.book});
 
   @override
+  State<BookDetailPage> createState() => _BookDetailPageState();
+}
+
+class _BookDetailPageState extends State<BookDetailPage> {
+  int selectedIndex = 0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        title: Text(book["title"]),
+        title: Text(widget.book["title"]),
         elevation: 3,
         shadowColor: Colors.black.withOpacity(0.3),
         centerTitle: true,
@@ -31,84 +37,241 @@ class BookDetailPage extends StatelessWidget {
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Center(
-          child: Column(
-            children: [
-              const SizedBox(height: 24),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.asset(
-                  book["image"],
-                  height: 290,
-                  width: 185,
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        decoration: BoxDecoration(
+            // color: Colors.white,
+            // boxShadow: [
+            //   BoxShadow(
+            //     color: Colors.black.withOpacity(0.05),
+            //     blurRadius: 5,
+            //     offset: Offset(0, -2),
+            //   )
+            // ],
+            ),
+        child: Row(
+          children: [
+            Expanded(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: selectedIndex == 0
+                      ? const Color(0xff4838D1)
+                      : Colors.transparent,
+                  foregroundColor: selectedIndex == 0
+                      ? Colors.white
+                      : const Color(0xff4838D1),
+                  side: const BorderSide(color: Color(0xff4838D1)),
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  elevation: 0,
                 ),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                book["title"],
-                style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w500),
-              ),
-              Text(
-                book["author"],
-                style: const TextStyle(fontSize: 20, color: Colors.grey),
-              ),
-
-              const SizedBox(height: 10),
-
-             Divider(thickness: 0.5),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
+                onPressed: () {
+                  setState(() {
+                    selectedIndex = 0;
+                  });
+                },
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    _buildStatItem(
-                      icon: Icons.star,
-                      iconColor: Colors.orange,
-                      label: "Reyting",
-                   value: (book["rating"] ?? 4.7).toStringAsFixed(1),
-
+                    Icon(
+                      Icons.play_circle_outline_outlined,
+                      color: selectedIndex == 0
+                          ? Colors.white
+                          : const Color(
+                              0xff4838D1), // change color when not selected
+                      size: 20,
                     ),
-                    _buildDivider(),
-
-                    _buildStatItem(
-                      label: "Davomiyligi",
-                      value: book["duration"] ?? "10:28:27",
-                    ),
-                    _buildDivider(),
-
-                    _buildStatItem(
-                      label: "Ovoz",
-                      value: book["voice"] ?? "Sayfullo Ikromov",
-                      isBold: true,
-                    ),
-                    _buildDivider(),
-
-                    _buildStatItem(
-                      label: "Kategoriya",
-                      value: book["category"] ?? "San’at",
-                      isBold: true,
-                    ),
-                    _buildDivider(),
-
-                    _buildStatItem(
-                      label: "Hozir o‘qimoqda",
-                      value: book["nowReading"] ?? "137 700",
-                      isBold: true,
-                    ),
+                    SizedBox(width: 5),
+                    Text("Audio"),
                   ],
                 ),
               ),
-             Divider(thickness: 0.5),
+            ),
+            // Expanded(
+            //   child: ElevatedButton.icon(
+            //     style: ElevatedButton.styleFrom(
+            //       backgroundColor: selectedIndex == 0
+            //           ? const Color(0xff4838D1)
+            //           : Colors.transparent,
 
-            ],
+            //       side: const BorderSide(color: Color(0xff4838D1)),
+            //       padding: const EdgeInsets.symmetric(vertical: 14),
+            //       shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(12),
+            //       ),
+            //       elevation: 0,
+            //       surfaceTintColor: Colors.transparent
+            //     ),
+            //     onPressed: () {
+            //       setState(() {
+            //         selectedIndex = 0;
+            //       });
+            //     },
+            //     icon: const Icon(
+            //       Icons.play_circle_outline_outlined,
+            //       color: Colors.white,
+            //       size: 20,
+            //     ),
+            //     label:
+            //         const Text("Audio", style: TextStyle(color: Colors.white)),
+            //   ),
+            // ),
+            const SizedBox(width: 12),
+
+            Expanded(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: selectedIndex == 1
+                      ? const Color(0xff4838D1)
+                      : Colors.transparent,
+                  foregroundColor: selectedIndex == 1
+                      ? Colors.white
+                      : const Color(0xff4838D1),
+                  side: const BorderSide(color: Color(0xff4838D1)),
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  elevation: 0,
+                ),
+                onPressed: () {
+                  setState(() {
+                    selectedIndex = 1;
+                  });
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.list_alt_outlined,
+                      color: selectedIndex == 0
+                          ? const Color(0xff4838D1)
+                          : Colors.white, 
+                      size: 20,
+                    ),
+                    SizedBox(width: 5),
+                    Text("Elektron"),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(height: 24),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Image.asset(
+                    widget.book["image"],
+                    height: 290,
+                    width: 185,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  widget.book["title"],
+                  style: const TextStyle(
+                      fontSize: 26, fontWeight: FontWeight.w500),
+                ),
+                Text(
+                  widget.book["author"],
+                  style: const TextStyle(fontSize: 20, color: Colors.grey),
+                ),
+                const SizedBox(height: 10),
+                Divider(thickness: 0.5),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      _buildStatItem(
+                        icon: Icons.star,
+                        iconColor: Colors.orange,
+                        label: "Reyting",
+                        value:
+                            (widget.book["rating"] ?? 4.7).toStringAsFixed(1),
+                      ),
+                      _buildDivider(),
+                      _buildStatItem(
+                        label: "Davomiyligi",
+                        value: widget.book["duration"] ?? "10:28:27",
+                      ),
+                      _buildDivider(),
+                      _buildStatItem(
+                        label: "Ovoz",
+                        value: widget.book["voice"] ?? "Sayfullo Ikromov",
+                        isBold: true,
+                      ),
+                      _buildDivider(),
+                      _buildStatItem(
+                        label: "Kategoriya",
+                        value: widget.book["category"] ?? "San’at",
+                        isBold: true,
+                      ),
+                      _buildDivider(),
+                      _buildStatItem(
+                        label: "Hozir o‘qimoqda",
+                        value: widget.book["nowReading"] ?? "137 700",
+                        isBold: true,
+                      ),
+                    ],
+                  ),
+                ),
+                Divider(thickness: 0.5),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Kitob haqida",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.w600),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                  child: Text(
+                    widget.book["details"],
+                    style: TextStyle(fontWeight: FontWeight.w300, fontSize: 14),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 16, horizontal: 86),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Color(0xff4838D1))),
+                      child: Text(
+                        "Kitobni narxi  ${widget.book["price"]} UZS",
+                        style: TextStyle(color: Color(0xff4838D1)),
+                      )),
+                ),
+
+
+                
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
-  
   Widget _buildStatItem({
     IconData? icon,
     Color? iconColor,
@@ -128,7 +291,7 @@ class BookDetailPage extends StatelessWidget {
           const SizedBox(height: 4),
           Row(
             children: [
-                         if (icon != null)
+              if (icon != null)
                 Icon(icon, size: 24, color: iconColor ?? Colors.black),
               if (icon != null) const SizedBox(width: 4),
               Text(
@@ -145,7 +308,6 @@ class BookDetailPage extends StatelessWidget {
     );
   }
 
-  // Helper for divider
   Widget _buildDivider() {
     return Container(
       height: 50,
@@ -154,141 +316,3 @@ class BookDetailPage extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import 'package:book_app/config/images.dart';
-// import 'package:flutter/material.dart';
-
-// class BookDetailPage extends StatelessWidget {
-//   final Map<String, dynamic> book;
-
-//   const BookDetailPage({super.key, required this.book});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-//         title: Text(book["title"]),
-//         elevation: 3,
-//         shadowColor: Colors.black.withOpacity(0.3),
-//         centerTitle: true,
-//         leading: Padding(padding: const EdgeInsets.only(left: 25),
-//           child: IconButton(
-//               onPressed: () { Navigator.pop(context);},
-//               icon: Icon(Icons.arrow_back_ios)),
-//         ),
-//         actions: [ 
-//           Padding(padding: EdgeInsets.only(right: 25), 
-//           child: IconButton(onPressed: (){}, icon: Image.asset(AppImages.vector2)),
-//           )
-//         ],
-        
-//       ),
-//       body: Padding(
-//         padding: const EdgeInsets.all(16),
-//         child: Center(
-//           child: Column(
-//             children: [
-//               SizedBox(height: 24),
-//               ClipRRect(
-//                 borderRadius: BorderRadius.circular(15),
-//                 child: Image.asset(
-//                   book["image"],
-//                   height: 290,
-//                   width: 185,
-//                 ),
-//               ),
-//               const SizedBox(height: 16),
-//               Text(book["title"],
-//                   style: const TextStyle(
-//                       fontSize: 26, fontWeight: FontWeight.w500)),
-//               Text(book["author"],
-//                   style: const TextStyle(fontSize: 20, color: Colors.grey)),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import 'package:flutter/material.dart';
-
-// class BookDetailPage extends StatelessWidget {
-//   final Map<String, dynamic> book;
-
-//   const BookDetailPage({super.key, required this.book});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text(book["title"])),
-//       body: Padding(
-//         padding: const EdgeInsets.all(16),
-//         child: Column(
-//           children: [
-//             Image.asset(book["image"], height: 200),
-//             const SizedBox(height: 20),
-//             Text(book["title"],
-//                 style: const TextStyle(
-//                     fontSize: 22, fontWeight: FontWeight.bold)),
-//             Text(book["author"],
-//                 style: const TextStyle(fontSize: 16, color: Colors.grey)),
-//             const SizedBox(height: 10),
-//             Text("Listeners: ${book["listeners"]}"),
-//             const SizedBox(height: 10),
-//             Text("Rating: ${book["rating"]} / 5"),
-//             const SizedBox(height: 20),
-//             const Text(
-//               "This is where the book description will go...",
-//               textAlign: TextAlign.center,
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }

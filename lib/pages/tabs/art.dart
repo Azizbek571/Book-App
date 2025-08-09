@@ -1,5 +1,5 @@
 import 'package:book_app/config/bookitem.dart';
-import 'package:book_app/config/images.dart';
+
 import 'package:flutter/material.dart';
 
 class ArtBooksTab extends StatelessWidget {
@@ -9,54 +9,81 @@ class ArtBooksTab extends StatelessWidget {
       "author": "Kiku Hughes",
       "image": "assets/images/muqaddima.png",
       "rating": 4,
+      "details": "On the Day of the Dead, La Muerte, ruler of the Land of the Remembered, and Xibalba, ruler of the Land of the Forgotten, see young boys Manolo Sánchez and Joaquín Mondragon competing for the love of their mutual crush María Posada. The gods strike a wager: if María marries Manolo, Xibalba will no longer interfere in mortal affairs, but if she marries Joaquín, La Muerte and Xibalba will swap realms. However, Xibalba cheats by giving Joaquín his Medal of Everlasting Life, which grants the wearer invincibility and “immeasurable courage”.",
+
+       "price": 30000
     },
     {
       "title": "Renaissance Art",
       "author": "Leonardo da Vinci",
       "image": "assets/images/hukmdor.png",
       "rating": 5,
+      "details": "On the Day of the Dead, La Muerte, ruler of the Land of the Remembered, and Xibalba, ruler of the Land of the Forgotten, see young boys Manolo Sánchez and Joaquín Mondragon competing for the love of their mutual crush María Posada. The gods strike a wager: if María marries Manolo, Xibalba will no longer interfere in mortal affairs, but if she marries Joaquín, La Muerte and Xibalba will swap realms. However, Xibalba cheats by giving Joaquín his Medal of Everlasting Life, which grants the wearer invincibility and “immeasurable courage”."
+       ,"price": 35000
+      
     },
     {
       "title": "Surrealism Explained",
       "author": "Salvador Dalí",
       "image": "assets/images/hukmdor.png",
       "rating": 2,
+      "details": "On the Day of the Dead, La Muerte, ruler of the Land of the Remembered, and Xibalba, ruler of the Land of the Forgotten, see young boys Manolo Sánchez and Joaquín Mondragon competing for the love of their mutual crush María Posada. The gods strike a wager: if María marries Manolo, Xibalba will no longer interfere in mortal affairs, but if she marries Joaquín, La Muerte and Xibalba will swap realms. However, Xibalba cheats by giving Joaquín his Medal of Everlasting Life, which grants the wearer invincibility and “immeasurable courage”."
+       ,"price": 35000
+     
     },
     {
       "title": "Displacement",
       "author": "Kiku Hughes",
       "image": "assets/images/muqaddima.png",
       "rating": 4,
+      "details": "On the Day of the Dead, La Muerte, ruler of the Land of the Remembered, and Xibalba, ruler of the Land of the Forgotten, see young boys Manolo Sánchez and Joaquín Mondragon competing for the love of their mutual crush María Posada. The gods strike a wager: if María marries Manolo, Xibalba will no longer interfere in mortal affairs, but if she marries Joaquín, La Muerte and Xibalba will swap realms. However, Xibalba cheats by giving Joaquín his Medal of Everlasting Life, which grants the wearer invincibility and “immeasurable courage”."
+       ,"price": 35000
+  
     },
     {
       "title": "Renaissance Art",
       "author": "Leonardo da Vinci",
       "image": "assets/images/hukmdor.png",
       "rating": 5,
+      "details": "On the Day of the Dead, La Muerte, ruler of the Land of the Remembered, and Xibalba, ruler of the Land of the Forgotten, see young boys Manolo Sánchez and Joaquín Mondragon competing for the love of their mutual crush María Posada. The gods strike a wager: if María marries Manolo, Xibalba will no longer interfere in mortal affairs, but if she marries Joaquín, La Muerte and Xibalba will swap realms. However, Xibalba cheats by giving Joaquín his Medal of Everlasting Life, which grants the wearer invincibility and “immeasurable courage”."
+       ,"price": 35000
+   
     },
     {
       "title": "Surrealism Explained",
       "author": "Salvador Dalí",
       "image": "assets/images/hukmdor.png",
       "rating": 2,
+      "details": "On the Day of the Dead, La Muerte, ruler of the Land of the Remembered, and Xibalba, ruler of the Land of the Forgotten, see young boys Manolo Sánchez and Joaquín Mondragon competing for the love of their mutual crush María Posada. The gods strike a wager: if María marries Manolo, Xibalba will no longer interfere in mortal affairs, but if she marries Joaquín, La Muerte and Xibalba will swap realms. However, Xibalba cheats by giving Joaquín his Medal of Everlasting Life, which grants the wearer invincibility and “immeasurable courage”."
+       ,"price": 35000
+        
     },
     {
       "title": "Displacement",
       "author": "Kiku Hughes",
       "image": "assets/images/muqaddima.png",
       "rating": 4,
+      "details": "On the Day of the Dead, La Muerte, ruler of the Land of the Remembered, and Xibalba, ruler of the Land of the Forgotten, see young boys Manolo Sánchez and Joaquín Mondragon competing for the love of their mutual crush María Posada. The gods strike a wager: if María marries Manolo, Xibalba will no longer interfere in mortal affairs, but if she marries Joaquín, La Muerte and Xibalba will swap realms. However, Xibalba cheats by giving Joaquín his Medal of Everlasting Life, which grants the wearer invincibility and “immeasurable courage”."
+       ,"price": 35000
+
     },
     {
       "title": "Renaissance Art",
       "author": "Leonardo da Vinci",
       "image": "assets/images/hukmdor.png",
       "rating": 5,
+      "details": "On the Day of the Dead, La Muerte, ruler of the Land of the Remembered, and Xibalba, ruler of the Land of the Forgotten, see young boys Manolo Sánchez and Joaquín Mondragon competing for the love of their mutual crush María Posada. The gods strike a wager: if María marries Manolo, Xibalba will no longer interfere in mortal affairs, but if she marries Joaquín, La Muerte and Xibalba will swap realms. However, Xibalba cheats by giving Joaquín his Medal of Everlasting Life, which grants the wearer invincibility and “immeasurable courage”."
+       ,"price": 35000
+
     },
     {
       "title": "Surrealism Explained",
       "author": "Salvador Dalí",
       "image": "assets/images/hukmdor.png",
       "rating": 2,
+      "details": "On the Day of the Dead, La Muerte, ruler of the Land of the Remembered, and Xibalba, ruler of the Land of the Forgotten, see young boys Manolo Sánchez and Joaquín Mondragon competing for the love of their mutual crush María Posada. The gods strike a wager: if María marries Manolo, Xibalba will no longer interfere in mortal affairs, but if she marries Joaquín, La Muerte and Xibalba will swap realms. However, Xibalba cheats by giving Joaquín his Medal of Everlasting Life, which grants the wearer invincibility and “immeasurable courage”."
+       ,"price": 35000
+
     },
   ];
 
