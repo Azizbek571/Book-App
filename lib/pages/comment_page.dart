@@ -22,7 +22,7 @@ class CommentPage extends StatelessWidget {
       'image': 'assets/images/woman1.jpg',
       'name': 'John Smith',
       'rating': 3,
-      'comment': 'It was okay, a bit slow in the middle.',
+      'comment': 'It was okay, jdnsdnnsda bit slow in the middle.',
           'date': ' 13.02.2024'
 
     },
